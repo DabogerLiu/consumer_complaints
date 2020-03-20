@@ -1,12 +1,13 @@
-import numpy as np
 import pandas as pd
-
 
 complains = pd.read_csv('./input/consumer_complaints.csv')
 
 complains['Date received'] =  pd.to_datetime(complains['Date received']).dt.to_period('Y')
 def max_percent(x):
-    return np.around(100 * x.value_counts().max()/x.count())
+
+    result=100 * x.value_counts().max()/x.count()
+
+    return round(result)
 report = complains.groupby(['Product','Date received']).agg(
     {
 
