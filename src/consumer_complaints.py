@@ -1,21 +1,9 @@
-import pandas as pd
+import csv
 
-complains = pd.read_csv('./input/consumer_complaints.csv')
+with open('./input/consumer_complaints.csv', newline='') as csvfile:
+  reader = csv.DictReader(csvfile)
+  data = next(reader)
+  print(data)
 
-complains['Date received'] =  pd.to_datetime(complains['Date received']).dt.to_period('Y')
-def max_percent(x):
-
-    result=100 * x.value_counts().max()/x.count()
-
-    return round(result)
-report = complains.groupby(['Product','Date received']).agg(
-    {
-
-        'Product':'size',
-        'Company': ['nunique',max_percent]
-    }
-)
-print(report)
-report.reset_index().to_csv (r' ./output/report.csv', index = False, header=False)
 
 
