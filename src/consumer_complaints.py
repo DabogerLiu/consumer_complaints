@@ -1,5 +1,5 @@
 import csv
-import dateutil.parser as parser
+from datetime import timedelta
 
 with open('./input/complaints.csv', newline='') as csvfile:
   reader = csv.DictReader(csvfile)
