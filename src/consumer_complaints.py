@@ -12,7 +12,7 @@ def csv_dict_list(variables_file):
   return dict_list
 
 
-complains = csv_dict_list(' ./input/consumer_complaints.csv')
+complains = csv_dict_list(' ./input/complaints.csv')
 
 #complains = csv_dict_list('C:/Users/Daboger/PycharmProjects/Insight_interview/complaints.csv')
 report = {}
