@@ -14,3 +14,5 @@ python3.5
     Based on the index list, reindex each row.
   
  5. Re-adjust the sorted report by year for rows share a same product key. 
+ 
+ 6. Read each line and write it to a CSV file: report.csv
