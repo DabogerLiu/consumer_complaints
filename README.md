@@ -9,8 +9,8 @@ python3.5
 3. Create a list of list to read the comapany name, count each the company mame usning a by its key ['Product'] & ['Year']
 
 
- 4.Sort the report, first by Product using sorted function. 
-   Get the index list
-   Based on the index list, reindex each row.
+  4.Sort the report, first by Product using sorted function. 
+    Get the index list
+    Based on the index list, reindex each row.
   
 5. Re-adjust the sorted report by year for rows share a same product key. 
