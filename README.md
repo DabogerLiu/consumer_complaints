@@ -13,4 +13,4 @@ python3.5
     Get the index list
     Based on the index list, reindex each row.
   
-5. Re-adjust the sorted report by year for rows share a same product key. 
+ 5. Re-adjust the sorted report by year for rows share a same product key. 
