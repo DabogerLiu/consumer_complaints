@@ -1,10 +1,56 @@
+# Read CSV file
 import csv
-from datetime import timedelta
-
-with open('./input/complaints.csv', newline='') as csvfile:
-  reader = csv.DictReader(csvfile)
-  data = next(reader)
-  print(data)
+from collections import Counter
 
 
+def csv_dict_list(variables_file):
+  # Open variable-based csv, iterate over the rows and map values to a list of dictionaries containing key/value pairs
+
+  reader = csv.DictReader(open(variables_file))
+  dict_list = []
+  for line in reader:
+    dict_list.append(line)
+  return dict_list
+
+
+complains = csv_dict_list('/content/complaints.csv')
+
+#complains = csv_dict_list('C:/Users/Daboger/PycharmProjects/Insight_interview/complaints.csv')
+report = {}
+report[0] = {}
+report[0]['Product']=complains[0]['Product']
+report[0]['Year'] = complains[0]['Date received'][0:4]
+report[0]['Total_complains'] = 1
+
+i,j = 1,0
+#print(len(report))
+while (i < len(complains)):
+  added = False
+  for index in range(len(report)):
+    if (report[index]['Product'] == complains[i]['Product'])&(report[index]['Year'] == complains[i]['Date received'][0:4]):
+      report[index]['Total_complains'] = report[index]['Total_complains']+1
+      added = True
+      break
+  if not added:            #Do not add 1
+    j = j + 1
+    report[j] = {}
+    report[j]['Product']= complains[i]['Product']
+    report[j]['Year']=complains[i]['Date received'][0:4]
+    report[j]['Total_complains']=1
+  i = i+1
+
+ListsofCompany = []
+for i in range(len(report)):
+  company=[]
+  for j in range(len(complains)):
+    if (report[i]['Product'] == complains[j]['Product'])&(report[i]['Year'] == complains[j]['Date received'][0:4]):
+      company.append(complains[j]['Company'])
+  ListsofCompany.append(company)
+
+for i in range(len(report)):
+  report[i]['Total_company']= len(Counter(ListsofCompany[i]).keys())
+  report[i]['max_frequency_company'] = round(max(Counter(ListsofCompany[i]).values())*100/report[i]['Total_complains'])
+
+for i in range(len(report)):
+  print(report[i])
 
