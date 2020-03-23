@@ -12,7 +12,7 @@ def csv_dict_list(variables_file):
   return dict_list
 
 
-complains = csv_dict_list(' ./input/complaints.csv')
+complains = csv_dict_list('  https://github.com/DabogerLiu/consumer_complaints/input/consumer_complaints.csv')
 
 #complains = csv_dict_list('C:/Users/Daboger/PycharmProjects/Insight_interview/complaints.csv')
 report = {}
@@ -81,7 +81,7 @@ for index in range(len(report)):
 for i in range(len(report)):
   print(sorted_Product[i],sorted_Year[i], sorted_Total_complains[i],sorted_Total_company[i],sorted_max_frequency_company[i])
 
-with open('./output/report.csv', 'w', newline='') as csvfile:
+with open(' https://github.com/DabogerLiu/consumer_complaints/output/report.csv', 'w', newline='') as csvfile:
   fieldnames = ['Product', 'Year','Total_complains','Total_company','sorted_max_frequency_company']
   writer = csv.DictWriter(csvfile,fieldnames=fieldnames)
   for i in range(len(report)):
