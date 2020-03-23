@@ -1,3 +1,2 @@
-!/bin/bash
-cd https://github.com/DabogerLiu/consumer_complaints/src/
- python3 consumer_complaints.py 
+#!/bin/bash
+ python3 ./src/consumer_complaints.py 
