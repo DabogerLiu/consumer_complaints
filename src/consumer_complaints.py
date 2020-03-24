@@ -15,21 +15,21 @@ def csv_dict_list(variables_file):
 complains = csv_dict_list('./input/consumer_complaints.csv')
 #complains = csv_dict_list('C:/Users/Daboger/Desktop/test_1/input/complaints.csv')
 key1 = str(complains[0]['Product'])
-key2 = str(complains[0]['Date received'][-4:])
+key2 = str(complains[0]['Date received'][0:4])
 key = list()
 key.append(key1 + key2)
 # print(key)
 
 
 key1 = str(complains[0]['Product']) 
-key2 = str(complains[0]['Date received'][-4:])
+key2 = str(complains[0]['Date received'][0:4])
 key = list()
 key.append( key1 + key2)
 #print(key)
 
 
 for i in range(len(complains)):
-  key.append(str(complains[i]['Product'])+str(complains[i]['Date received'][-4:]))
+  key.append(str(complains[i]['Product'])+str(complains[i]['Date received'][0:4]))
 
 report = Counter(key).keys()
 sorted_report = sorted(report)
@@ -45,7 +45,7 @@ Total_complains = list()
 for i in range(len(report)):
   counter = 0
   for j in range(len(complains)):
-    if (product[i]==complains[j]['Product'])&(year[i]==complains[j]['Date received'][-4:]):
+    if (product[i]==complains[j]['Product'])&(year[i]==complains[j]['Date received'][0:4]):
       counter = counter+1
   Total_complains.append(counter)
 
@@ -53,7 +53,7 @@ ListsofCompany = []
 for i in range(len(report)):
   company=[]
   for j in range(len(complains)):
-    if (product[i] == complains[j]['Product'])&(year[i] == complains[j]['Date received'][-4:]):
+    if (product[i] == complains[j]['Product'])&(year[i] == complains[j]['Date received'][0:4]):
       company.append(complains[j]['Company'])
   ListsofCompany.append(company)
 Total_company = list()
