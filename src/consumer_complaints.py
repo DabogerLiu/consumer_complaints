@@ -70,7 +70,7 @@ with open('./output/report.csv', 'w', newline='') as csvfile:
     fieldnames = ['Product', 'Year','Total_complains','Total_company','max_frequency_company']
     writer = csv.DictWriter(csvfile,fieldnames=fieldnames)
     for i in range(len(report)):
-      writer.writerow({'Product':product[i].lower(),'Year':year[i],'Total_complains':Total_complains[i],'Total_company':Total_company[i],'max_frequency_company': max_Frequency_Company[i]})
+      writer.writerow({'Product':product[i].lower(),'Year':year[i],'Total_complains':Total_complains[i],'Total_company':Total_company[i],'max_frequency_company': max_frequency_company[i]})
  
 
   
