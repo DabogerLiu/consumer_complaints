@@ -54,7 +54,7 @@ max_frequency_company = list()
 for i in range(len(report)):
   Total_company.append(len(Counter(ListsofCompany[i]).keys()))
   frequency  = list(Counter(ListsofCompany[i]).values())
-  max_frequency = frequency.max()
+  max_frequency = max(frequency)
   max_frequency_company.append(round(frequency*100/Total_complains[i]))
   
 
