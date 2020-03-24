@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 ../src/consumer_complaints.py 
+python3.8 ../src/consumer_complaints.py 
