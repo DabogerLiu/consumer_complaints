@@ -12,8 +12,8 @@ def csv_dict_list(variables_file):
   return dict_list
 
 
-#complains = csv_dict_list('./input/consumer_complaints.csv')
-complains = csv_dict_list('C:/Users/Daboger/Desktop/test_1/input/complaints.csv')
+complains = csv_dict_list('./input/consumer_complaints.csv')
+#complains = csv_dict_list('C:/Users/Daboger/Desktop/test_1/input/complaints.csv')
 key1 = str(complains[0]['Product'])
 key2 = str(complains[0]['Date received'][0:4])
 key = list()
