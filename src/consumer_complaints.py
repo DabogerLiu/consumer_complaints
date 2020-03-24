@@ -48,10 +48,14 @@ for i in range(len(report)):
     if (product[i] == complains[j]['Product']) & (year[i] == complains[j]['Date received'][0:4]):
       company.append(complains[j]['Company'])
   ListsofCompany.append(company)
+  
 Total_company = list()
-max_frequency_company = list()
+
 for i in range(len(report)):
   Total_company.append(len(Counter(ListsofCompany[i]).keys()))
+  
+max_frequency_company = list()
+for i in range(len(report)):
   max_frequency_company.append(round(max(Counter(ListsofCompany[i]).values()) * 100 / Total_complains[i]))
 
 with open('./output/report.csv', 'w', newline='') as csvfile:
