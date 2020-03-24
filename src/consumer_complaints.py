@@ -17,7 +17,7 @@ complains = csv_dict_list('./input/consumer_complaints.csv')
 #complains = csv_dict_list('C:/Users/Daboger/PycharmProjects/Insight_interview/complaints.csv')
 report = {}
 report[0] = {}
-report[0]['Product']=complains[0]['Product'].lower()
+report[0]['Product']=complains[0]['Product']
 report[0]['Year'] = complains[0]['Date received'][0:4]
 report[0]['Total_complains'] = 1
 
@@ -33,7 +33,7 @@ while (i < len(complains)):
   if not added:            #Do not add 1
     j = j + 1
     report[j] = {}
-    report[j]['Product']= complains[i]['Product'].lower()
+    report[j]['Product']= complains[i]['Product']
     report[j]['Year']=complains[i]['Date received'][0:4]
     report[j]['Total_complains']=1
   i = i+1
@@ -86,5 +86,5 @@ with open('./output/report.csv', 'w', newline='') as csvfile:
   writer = csv.DictWriter(csvfile,fieldnames=fieldnames)
   for i in range(len(report)):
     #writer.writerow({'Product':sorted_Product[i],'Year':sorted_Year[i],'Total_complains':sorted_Total_complains[i],'Total_company':sorted_Total_company[i],'sorted_max_frequency_company':sorted_max_frequency_company[i]})
-    writer.writerow({'Product':sorted_Product[i],'Year':sorted_Year[i],'Total_complains':sorted_Total_complains[i],'Total_company':sorted_Total_company[i],'sorted_max_frequency_company':sorted_max_frequency_company[i]})
+    writer.writerow({'Product':sorted_Product[i].lower(),'Year':sorted_Year[i],'Total_complains':sorted_Total_complains[i],'Total_company':sorted_Total_company[i],'sorted_max_frequency_company':sorted_max_frequency_company[i]})
   #writer.writeheader()
