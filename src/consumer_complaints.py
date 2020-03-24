@@ -11,14 +11,12 @@ def csv_dict_list(variables_file):
     dict_list.append(line)
   return dict_list
 
-
 complains = csv_dict_list('./input/consumer_complaints.csv')
 
 key1 = str(complains[0]['Product']) 
 key2 = str(complains[0]['Date received'][0:4])
 key = list()
 key.append( key1 + key2)
-#print(key)
 
 
 for i in range(len(complains)):
@@ -56,13 +54,15 @@ for i in range(len(report)):
   #frequency  = list(Counter(ListsofCompany[i]).values())
   #max_frequency = max(frequency)  if frequency else None
   #max_frequency_company.append(round(max_frequency*100/Total_complains[i]))
-  Max_Frequency_Company.append(round(max(Counter(ListsofCompany[i]).values())*100/Total_complains[i]))
+  #Max_Frequency_Company.append(round(max(Counter(ListsofCompany[i]).values())*100/Total_complains[i]))
   
 
 with open('./output/report.csv', 'w', newline='') as csvfile:
-  fieldnames = ['Product', 'Year','Total_complains','Total_company','max_frequency_company']
+ # fieldnames = ['Product', 'Year','Total_complains','Total_company','max_frequency_company']
+ fieldnames = ['Product', 'Year','Total_complains','Total_company']
   writer = csv.DictWriter(csvfile,fieldnames=fieldnames)
   for i in range(len(report)):
     #writer.writerow({'Product':sorted_Product[i],'Year':sorted_Year[i],'Total_complains':sorted_Total_complains[i],'Total_company':sorted_Total_company[i],'sorted_max_frequency_company':sorted_max_frequency_company[i]})
-    writer.writerow({'Product':product[i].lower(),'Year':year[i],'Total_complains':Total_complains[i],'Total_company':Total_company[i],'max_frequency_company': Max_Frequency_Company[i]})
+    #writer.writerow({'Product':product[i].lower(),'Year':year[i],'Total_complains':Total_complains[i],'Total_company':Total_company[i],'max_frequency_company': Max_Frequency_Company[i]})
+    writer.writerow({'Product':product[i].lower(),'Year':year[i],'Total_complains':Total_complains[i],'Total_company':Total_company[i]})
   #writer.writeheader()
