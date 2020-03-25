@@ -3,16 +3,19 @@ python3.5
 
 1. Read CSV files as dictionary using pyhton default csv library
 
-2. Read each line of the CSV file and count by Product and Date received. 
-   Creat a new dictionary named report.  
-
-3. Create a list of list to read the comapany name, count each the company mame usning a by its key ['Product'] & ['Year']
-
-
-  4.Sort the report, first by Product using sorted function. 
-    Get the index list
-    Based on the index list, reindex each row.
-  
- 5. Re-adjust the sorted report by year for rows share a same product key. 
+2. Read each column of the CSV file and count by product and year. 
+   Combbine each product and year as a key, sort the key using sorted arrray.
  
- 6. Read each line and write it to a CSV file: report.csv
+3. Count how many times for each key by python build in function: counter.keys()
+
+4. Use a list of list method, to read each key, and output the companies.   
+
+5. Count how many companies for each key by python build in function: Counter, use counter.keys(). 
+
+6. Count the number of each company for each key by counter.values(). 
+   use max() method to compute company with the max_frequency.
+   Then divided by total numbers.
+   
+
+   
+
