@@ -7,7 +7,7 @@ python3.5
 2. Read each column of the CSV file and count by product and year. 
    Combbine each product and year as a key, sort the key using sorted arrray & get sorted_report.
    Seperate the keys in sorted_report by indexs, and get two lists: 
-   product & year (All sorted)
+   product & year (Both sorted)
  
 3. Count how many times for each key by python build in function: counter.keys(), use a list named Total_complains.
 
