@@ -33,7 +33,7 @@ for i in range(len(sorted_report)):
   product.append(sorted_report[i][0:len(sorted_report[i])-4])
   
 Total_complains = list()
-for i in range(len(report)):
+for i in range(len(sorted_report)):
   counter = 0
   for j in range(len(complains)):
     if (product[i]==complains[j]['Product'])&(year[i]==complains[j]['Date received'][0:4]):
@@ -41,7 +41,7 @@ for i in range(len(report)):
   Total_complains.append(counter)
 
 ListsofCompany = []
-for i in range(len(report)):
+for i in range(len(sorted_report)):
   company=[]
   for j in range(len(complains)):
     if (product[i] == complains[j]['Product'])&(year[i] == complains[j]['Date received'][0:4]):
@@ -49,15 +49,14 @@ for i in range(len(report)):
   ListsofCompany.append(company)
 Total_company = list()
 max_frequency_company = list()
-for i in range(len(report)):
+for i in range(len(sorted_report)):
   Total_company.append(len(Counter(ListsofCompany[i]).keys()))
   max_frequency_company.append(round(max(Counter(ListsofCompany[i]).values())*100/Total_complains[i]))
 
 with open('./output/report.csv', 'w', newline='') as csvfile:
   fieldnames = ['Product', 'Year','Total_complains','Total_company','max_frequency_company']
   writer = csv.DictWriter(csvfile,fieldnames=fieldnames)
-  for i in range(len(report)):
-  
+  for i in range(len(sorted_report)):
     fieldnames = ['Product', 'Year','Total_complains','Total_company','max_frequency_company']
     writer.writerow({'Product':product[i].lower(),'Year':year[i],'Total_complains':Total_complains[i],'Total_company':Total_company[i],'max_frequency_company': max_frequency_company[i]})
  
