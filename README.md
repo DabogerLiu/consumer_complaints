@@ -4,8 +4,8 @@ python3.5
 1. Read CSV files as dictionary using pyhton default csv library
 
 2. Read each column of the CSV file and count by product and year. 
-   Combbine each product and year as a key, sort the key using sorted arrray.
-   Seperate the keys by indexs, and get two lists: 
+   Combbine each product and year as a key, sort the key using sorted arrray & get sorted_report.
+   Seperate the keys in sorted_report by indexs, and get two lists: 
    product & year
  
 3. Count how many times for each key by python build in function: counter.keys(), use a list named Total_complains.
@@ -19,6 +19,7 @@ python3.5
    use max() method to compute company with the max_frequency.
    Then divided by total numbers as a list with the name max_frequency_company
    
- 7. Read 
+ 7. Use for loop to write each row by the order:
+   Product, Year,Total_complains,Total_company,max_frequency_company
    
 
