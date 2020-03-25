@@ -2,7 +2,7 @@ Consumer complains
 Shaobo Liu
 python3.5
 
-1. Read CSV files as dictionary using pyhton default csv library
+1. Read CSV files as dictionary using pyhton's csv library
 
 2. Read each column of the CSV file and count by product and year. 
    Combbine each product and year as a key, sort the key using sorted arrray & get sorted_report.
